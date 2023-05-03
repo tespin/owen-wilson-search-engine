@@ -1,0 +1,10 @@
+# Environment variables
+*.env
+
+# Node
+node_modules
+
+# Mac detritus
+.DS_Store
+
+

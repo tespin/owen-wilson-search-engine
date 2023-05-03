@@ -1,0 +1,15 @@
+{
+  "name": "supplyframe-fs-intern-challenge",
+  "version": "1.0.0",
+  "description": "Submission for Supplyframe Full Stack Intern Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tristan Espinoza",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
