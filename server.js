@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const router = require('./routes/router');
+const apiRouter = require('./routes/api');
 
 // app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
@@ -12,7 +12,8 @@ app.listen(PORT, () => {
 });
 
 app.use(express.static(path.join(__dirname, '/public')));
-app.use('/', router);
+app.use(express.urlencoded({ extended: true }));
+app.use('/', apiRouter);
 
 // app.get('/', (req, res) => {
 //   res.render('index');
