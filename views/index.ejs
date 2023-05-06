@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Supplyframe Full Stack Intern Challenge</title>
+    <title>Owen Wilson Wow Search Engine</title>
     <meta
       name="description"
       content="Submission for Supply3frame Full Stack Intern Challenge"
@@ -18,17 +18,45 @@
       class="flex w-full xs:flex-col xs:justify-center xs:items-center xs:mt-8"
     >
       <div class="flex xs:flex-col xs:max-w-sm">
-        <h1 class="text-4xl text-center">
-          Find every instance of Owen Wilson saying "wow" in cinema
-        </h1>
-        <form action="/" method="POST">
-          <input
-            type="text"
-            name="title"
-            placeholder="Search for a movie title"
-            class="bg-transparent border-2 border-black py-2 px-4 xs:mt-8 rounded-lg xs:w-full"
+        <div class="flex flex-row justify-between xs:w-full">
+          <a href="#">Owen Wilson Search Engine</a>
+          <img
+            src="/images/hamburger-menu.svg"
+            alt="A hamburger menu"
+            height="20"
+            width="20"
           />
-        </form>
+        </div>
+        <main>
+          <div class="flex flex-col xs:w-full xs:mt-10">
+            <h1 class="text-4xl text-center">
+              Find every instance of Owen Wilson saying "wow" in cinema
+            </h1>
+            <form action="/" method="POST">
+              <input
+                type="text"
+                name="title"
+                placeholder="Search for a movie title"
+                class="bg-transparent border-2 border-black py-2 px-4 xs:mt-8 rounded-lg xs:w-full"
+              />
+            </form>
+            <div class="flex xs:flex-col xs:mt-8">
+              <h2 class="text-2xl">Random Wows</h2>
+              <%for (let result in results){%>
+              <div class="xs:mt-4">
+                <img
+                  src="<%=results[result].poster%>"
+                  class="xs:w-96 xs:h-96 object-cover"
+                />
+                <div class="flex flex-row justify-between xs:w-full">
+                  <p><%=results[result].movie%></p>
+                  <p><%=results[result].year%></p>
+                </div>
+                <%}%>
+              </div>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   </body>
