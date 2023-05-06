@@ -1,7 +1,10 @@
 const router = require('express').Router();
 
-router.get('/', (req, res) => {
-  res.render('index');
+router.get('/', async (req, res) => {
+  const url = 'https://owen-wilson-wow-api.onrender.com/wows/random?results=5';
+  const results = await fetch(url);
+  const json = await results.json();
+  res.render('index', { results: json });
 });
 
 router.post('/', async (req, res) => {
