@@ -538,8 +538,16 @@ video {
   display: flex;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .rounded-lg {
   border-radius: 0.5rem;
+}
+
+.rounded-sm {
+  border-radius: 0.125rem;
 }
 
 .border-2 {
@@ -584,6 +592,15 @@ video {
   padding-right: 1.5rem;
 }
 
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -594,8 +611,20 @@ video {
     margin-top: 2rem;
   }
 
+  .xs\:mt-4 {
+    margin-top: 1rem;
+  }
+
   .xs\:flex {
     display: flex;
+  }
+
+  .xs\:w-full {
+    width: 100%;
+  }
+
+  .xs\:max-w-sm {
+    max-width: 24rem;
   }
 
   .xs\:flex-col {
