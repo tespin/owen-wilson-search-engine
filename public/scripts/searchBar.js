@@ -1,36 +1,6 @@
-// let suggestions = [
-//   'Bottle Rocket',
-//   'The Haunting',
-//   'Breakfast of Champions',
-//   'Shanghai Noon',
-//   'Meet the Parents',
-//   'Zoolander',
-//   'I Spy',
-//   'Shanghai Knights',
-//   'The Big Bounce',
-//   'Starsky & Hutch',
-//   'Wedding Crashers',
-//   'Cars',
-//   'You, Me and Dupree',
-//   'The Darjeeling Limited',
-//   'Drillbit Taylor',
-//   'Marley & Me',
-//   'Marmaduke',
-//   'Little Fockers',
-//   'Hall Pass',
-//   'Midnight in Paris',
-//   'Cars 2',
-//   'The Big Year',
-//   'The Internship',
-//   'Free Birds',
-//   'Are You Here',
-//   'Night at the Museum: Secret of the Tomb',
-//   'No Escape',
-//   'Cars 3',
-//   'Father Figures',
-// ];
 let suggestions = [];
 const searchInput = document.querySelector('.search-input');
+const resultsContainer = document.querySelector('.search-results');
 
 window.addEventListener('load', async () => {
   const url = 'https://owen-wilson-wow-api.onrender.com/wows/movies';
@@ -38,14 +8,32 @@ window.addEventListener('load', async () => {
   const json = await results.json();
 
   suggestions = json;
-  // console.log(suggestions);
 });
 
 searchInput.addEventListener('keyup', (event) => {
   const { key } = event;
-  showResults();
-  console.log('keyup fired');
-  // event.preventDefault();
+
+  switch (key) {
+    case 'Escape':
+      event.preventDefault();
+      return;
+    default:
+      showResults();
+  }
+});
+
+searchInput.addEventListener('keydown', (event) => {
+  const { key } = event;
+
+  if (key === 'Escape') {
+    resultsContainer.classList.add('hidden');
+    searchInput.value = '';
+  }
+});
+
+resultsContainer.addEventListener('click', (event) => {
+  searchInput.value = event.target.innerText;
+  resultsContainer.classList.add('hidden');
 });
 
 const searchFn = (input) => {
@@ -60,17 +48,24 @@ const searchFn = (input) => {
 const showResults = () => {
   const input = searchInput.value;
   const results = searchFn(input);
-  console.log(results);
-  const resultsContainer = document.querySelector('.search-results');
+
+  resultsContainer.classList.add('hidden');
+  resultsContainer.innerHTML = '';
+  if (results.length === 0) {
+    return;
+  }
+
   resultsContainer.innerHTML = results
     .map((result, index) => {
       return `
     <li
-      class='search-result'>
+      class='search-result hover:bg-gray-400 cursor-default'>
       ${result}
     </li>`;
     })
     .join('');
+
+  resultsContainer.classList.remove('hidden');
 };
 
 document.querySelector('form').addEventListener('submit', (event) => {
