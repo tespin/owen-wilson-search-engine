@@ -21,3 +21,4 @@ The project uses Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api
 - fix: margin on search meta
 - fix: autocomplete styles
 - fix: character limit instead of full line
+- fix: abstract components into ejs partials
