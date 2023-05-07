@@ -10,6 +10,7 @@ The project uses Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api
 - docs: installation
 - docs: next steps (accessibility)
 - docs: next steps (allow search via other fields)
+- docs: next steps (intelligent cropping)
 - feat: hover style for search results
 - feat: pagination
 - feat: movie page
