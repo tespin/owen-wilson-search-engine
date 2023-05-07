@@ -41,10 +41,11 @@
                 class="search-input bg-white border-2 border-black py-2 px-4 xs:mt-8 rounded-lg xs:w-full"
               />
               <ul
-                class="search-results hidden bg-white border-2 xs:w-full z-10 xs:py-1"
+                class="autocomplete-results hidden bg-white border-2 xs:w-full z-10 xs:py-1"
               ></ul>
             </form>
             <p class="search-meta"></p>
+            <div class="search-results"></div>
             <div class="flex xs:flex-col xs:mt-8">
               <h2 class="text-2xl">Random Wows</h2>
               <%for (let result in results){%>
