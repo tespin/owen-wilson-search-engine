@@ -1,50 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Owen Wilson Wow Search Engine</title>
-    <meta
-      name="description"
-      content="Submission for Supplyframe Full Stack Intern Challenge"
-      <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <link href="/css/output.css" rel="stylesheet" type="text/css" />
-    <script src="/scripts/searchBar.js" type="module"></script>
+    <%- include('./partials/head');%>
   </head>
   <body>
     <div
       class="flex w-full xs:flex-col xs:justify-center xs:items-center xs:mt-8"
     >
       <div class="flex xs:flex-col xs:max-w-sm">
-        <div class="flex flex-row justify-between xs:w-full">
-          <a href="#">Owen Wilson Search Engine</a>
-          <img
-            src="/images/hamburger-menu.svg"
-            alt="A hamburger menu"
-            height="20"
-            width="20"
-          />
-        </div>
+        <%- include('./partials/header.ejs');%>
         <main>
           <div class="flex flex-col xs:w-full xs:mt-10">
             <h1 class="text-4xl text-center">
               Find every instance of Owen Wilson saying "wow" in cinema
             </h1>
-            <form action="/" class="relative" method="POST">
-              <input
-                type="text"
-                name="title"
-                placeholder="Search for a movie title"
-                class="search-input bg-white border-2 border-black py-2 px-4 xs:mt-8 rounded-lg xs:w-full"
-              />
-              <ul
-                class="autocomplete-results hidden bg-white border-2 xs:w-full z-10 xs:py-1"
-              ></ul>
-            </form>
-            <% if (typeof(title) !== 'undefined' && title.length > 0) { %>
+            <%- include('./partials/searchForm');%> <% if (typeof(title) !==
+            'undefined' && title.length > 0) { %>
             <p class="mt-6"><%=`Search results for: "${title}"`%></p>
             <%}%> <% if (typeof(searchResults) !== 'undefined'){ %>
             <div class="search-results">
