@@ -44,27 +44,24 @@
                 class="autocomplete-results hidden bg-white border-2 xs:w-full z-10 xs:py-1"
               ></ul>
             </form>
-            <p class="search-meta"></p>
-            <div class="search-results"></div>
+            <% if (typeof(title) !== 'undefined' && title.length > 0) { %>
+            <p class="mt-6"><%=`Search results for: "${title}"`%></p>
+            <%}%> <% if (typeof(searchResults) !== 'undefined'){ %>
+            <div class="search-results">
+              <%for (let result of searchResults){%> <%-
+              include('./partials/movieCard', { src: result.poster, fullLine:
+              result.full_line, movieTitle: result.movie, movieYear:
+              result.year}) %> <%}%>
+            </div>
+            <%}%> <% if (typeof(randomResults) !== 'undefined'){ %>
             <div class="flex xs:flex-col xs:mt-8">
               <h2 class="text-2xl">Random Wows</h2>
-              <%for (let result in results){%>
-              <div class="flex xs:flex-col xs:mt-4">
-                <div class="xs:mb-8">
-                  <img
-                    src="<%=results[result].poster%>"
-                    class="xs:w-96 xs:h-96 object-cover xs:rounded-md xs:shadow-md"
-                  />
-                  <div class="flex flex-row justify-between xs:w-full xs:mt-2">
-                    <p><%=`"${results[result].full_line}"`%></p>
-                    <p class="text-gray-400">
-                      <%=`${results[result].movie} (${results[result].year})`%>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <%}%>
+              <%for (let result of randomResults){%> <%-
+              include('./partials/movieCard', { src: result.poster, fullLine:
+              result.full_line, movieTitle: result.movie, movieYear:
+              result.year}) %> <%}%>
             </div>
+            <%}%>
           </div>
         </main>
       </div>

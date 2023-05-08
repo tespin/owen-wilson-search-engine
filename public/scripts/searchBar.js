@@ -1,3 +1,5 @@
+// let ejs = require('ejs');
+
 let suggestions = [];
 const searchInput = document.querySelector('.search-input');
 const resultsContainer = document.querySelector('.autocomplete-results');
@@ -79,40 +81,3 @@ const showResults = () => {
 
   resultsContainer.classList.remove('hidden');
 };
-
-document.querySelector('form').addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const meta = document.querySelector('.search-meta');
-  meta.innerHTML = `Search results for: "${searchInput.value}"`;
-  const url =
-    'https://owen-wilson-wow-api.onrender.com/wows/random?results=100';
-  const apiResults = await fetch(url);
-  const json = await apiResults.json();
-  console.log(json[5].movie);
-  console.log(searchInput.value);
-  const results = json.filter((item) => {
-    return item.movie.toLowerCase().startsWith(searchInput.value.toLowerCase());
-  });
-
-  searchResultsContainer.innerHTML = results
-    .slice(0, 3)
-    .map((result, index) => {
-      return `
-      <div class="flex xs:flex-col xs:mt-4">
-        <div class="xs:mb-8">
-          <img
-          src=${result.poster}
-          class="xs:w-96 xs:h-96 object-cover xs:rounded-md xs:shadow-md"
-          />
-          <div class="flex flex-row justify-between xs:w-full xs:mt-2">
-            <p>"${result.full_line}"</p>
-            <p class="text-gray-400">
-              ${result.movie} (${result.year})
-            </p>
-          </div>
-        </div>
-      </div>
-      `;
-    })
-    .join('');
-});
