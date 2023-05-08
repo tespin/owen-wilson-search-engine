@@ -28,7 +28,9 @@
             <% if (current == 1) { %>
             <li class="disabled"><a>First</a></li>
             <% } else { %>
-            <li><a href="/movies/1">First</a></li>
+            <li>
+              <a href="<%=`/search/movies/1?title=${searchTerm}`%>">First</a>
+            </li>
             <% } %> <% var i = (Number(current) > 5 ? Number(current) - 4 : 1)
             %> <% if (i !== 1) { %>
             <li class="disabled"><a>...</a></li>
@@ -36,13 +38,21 @@
             %> <% if (i == current) { %>
             <li class="active"><a><%= i %></a></li>
             <% } else { %>
-            <li><a href="/movies/<%= i %>"><%= i %></a></li>
+            <li>
+              <a href="<%=`/search/movies/${i}?title=${searchTerm} `%>"
+                ><%= i %></a
+              >
+            </li>
             <% } %> <% if (i == Number(current) + 4 && i < pages) { %>
             <li class="disabled"><a>...</a></li>
             <% } %> <% } %> <% if (current == pages) { %>
             <li class="disabled"><a>Last</a></li>
             <% } else { %>
-            <li><a href="/movies/<%= pages %>">Last</a></li>
+            <li>
+              <a href="<%=`/search/movies/${pages}?title=${searchTerm}`%>"
+                >Last</a
+              >
+            </li>
             <% } %>
           </ul>
           <%}%>
