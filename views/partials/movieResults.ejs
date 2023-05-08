@@ -1,0 +1,3 @@
+<%for (let result of results){%> <%- include('./movieCard', { src:
+result.poster, fullLine: result.full_line, movieTitle: result.movie, movieYear:
+result.year}) %> <%}%>

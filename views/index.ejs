@@ -48,18 +48,14 @@
             <p class="mt-6"><%=`Search results for: "${title}"`%></p>
             <%}%> <% if (typeof(searchResults) !== 'undefined'){ %>
             <div class="search-results">
-              <%for (let result of searchResults){%> <%-
-              include('./partials/movieCard', { src: result.poster, fullLine:
-              result.full_line, movieTitle: result.movie, movieYear:
-              result.year}) %> <%}%>
+              <%- include('./partials/movieResults', { results: searchResults })
+              %>
             </div>
             <%}%> <% if (typeof(randomResults) !== 'undefined'){ %>
             <div class="flex xs:flex-col xs:mt-8">
               <h2 class="text-2xl">Random Wows</h2>
-              <%for (let result of randomResults){%> <%-
-              include('./partials/movieCard', { src: result.poster, fullLine:
-              result.full_line, movieTitle: result.movie, movieYear:
-              result.year}) %> <%}%>
+              <%- include('./partials/movieResults', { results: randomResults })
+              %>
             </div>
             <%}%>
           </div>
