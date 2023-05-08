@@ -12,7 +12,6 @@ The project uses Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api
 - docs: next steps (allow search via other fields)
 - docs: next steps (intelligent cropping)
 - feat: hover style for search results
-- feat: pagination
 - feat: movie page
 - feat: desktop version
 - feat: add to nav menu (about, installation)
@@ -21,3 +20,4 @@ The project uses Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api
 - fix: margin on search meta
 - fix: autocomplete styles
 - fix: character limit instead of full line
+- fix: cannot make get requests to search results beyond 1st page
