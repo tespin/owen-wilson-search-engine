@@ -6,7 +6,7 @@ module.exports = {
   content: [
     '*.{html,js,ejs}',
     './public/**/*.{js,ejs}',
-    './views/*.{js,ejs}',
+    './views/**/*.{js,ejs}',
     './routes/*.{js,ejs}',
   ],
   theme: {
