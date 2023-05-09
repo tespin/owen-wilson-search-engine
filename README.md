@@ -21,3 +21,4 @@ The project uses Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api
 - fix: autocomplete styles
 - fix: character limit instead of full line
 - fix: cannot make get requests to search results beyond 1st page
+- fix: pagination styling
