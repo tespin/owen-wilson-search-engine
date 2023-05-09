@@ -11,9 +11,6 @@
         <%- include('../partials/header.ejs');%>
         <main>
           <div class="flex flex-col xs:w-full xs:mt-10">
-            <!-- <h1 class="text-4xl text-center">
-              Find every instance of Owen Wilson saying "wow" in cinema
-            </h1> -->
             <%- include('../partials/searchForm');%> <% if (typeof(searchTerm)
             !== 'undefined' && searchTerm.length > 0) { %>
             <p class="mt-6"><%=`Search results for: "${searchTerm}"`%></p>
@@ -23,39 +20,8 @@
             </div>
             <%}%>
           </div>
-          <% if (pages > 0) { %>
-          <ul class="pagination text-center">
-            <% if (current == 1) { %>
-            <li class="disabled"><a>First</a></li>
-            <% } else { %>
-            <li>
-              <a href="<%=`/search/movies/1?title=${searchTerm}`%>">First</a>
-            </li>
-            <% } %> <% var i = (Number(current) > 5 ? Number(current) - 4 : 1)
-            %> <% if (i !== 1) { %>
-            <li class="disabled"><a>...</a></li>
-            <% } %> <% for (; i <= (Number(current) + 4) && i <= pages; i++) {
-            %> <% if (i == current) { %>
-            <li class="active"><a><%= i %></a></li>
-            <% } else { %>
-            <li>
-              <a href="<%=`/search/movies/${i}?title=${searchTerm} `%>"
-                ><%= i %></a
-              >
-            </li>
-            <% } %> <% if (i == Number(current) + 4 && i < pages) { %>
-            <li class="disabled"><a>...</a></li>
-            <% } %> <% } %> <% if (current == pages) { %>
-            <li class="disabled"><a>Last</a></li>
-            <% } else { %>
-            <li>
-              <a href="<%=`/search/movies/${pages}?title=${searchTerm}`%>"
-                >Last</a
-              >
-            </li>
-            <% } %>
-          </ul>
-          <%}%>
+          <% if (pages > 0) { %> <%- include('../partials/pageNav', { current:
+          current, pages: pages})%> <%}%>
         </main>
       </div>
     </div>
