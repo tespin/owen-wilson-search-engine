@@ -1,7 +1,7 @@
 <div class="flex xs:flex-col xs:mt-4">
   <div class="xs:mb-8">
     <a
-      href="<%=`/movie/${movieTitle.replace(/\s+/g, '-').toLowerCase()}/${currentWow}`%>"
+      href="<%=`/movie/${movieTitle.replace(/\,/g, '').replace(/\s+/g, '-').toLowerCase()}/${currentWow}`%>"
     >
       <img
         src="<%=imgSrc%>"
