@@ -12,7 +12,6 @@ The project uses Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api
 - docs: next steps (allow search via other fields)
 - docs: next steps (intelligent cropping)
 - feat: hover style for search results
-- feat: movie page
 - feat: desktop version
 - feat: add to nav menu (about, installation)
 - feat: jest tests
@@ -23,3 +22,6 @@ The project uses Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api
 - fix: cannot make get requests to search results beyond 1st page
 - fix: fix url path; should be search/movies?title=blah&page=1
 - fix: turn svgs into partials
+- fix: movie page styling
+- fix: remove commas in url
+- fix: add comma back to you me and dupree
