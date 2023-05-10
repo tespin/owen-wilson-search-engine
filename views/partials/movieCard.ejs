@@ -1,9 +1,13 @@
 <div class="flex xs:flex-col xs:mt-4">
   <div class="xs:mb-8">
-    <img
-      src="<%=src%>"
-      class="xs:w-96 xs:h-96 object-cover xs:rounded-md xs:shadow-md"
-    />
+    <a
+      href="<%=`/movie/${movieTitle.replace(/\s+/g, '-').toLowerCase()}/${currentWow}`%>"
+    >
+      <img
+        src="<%=imgSrc%>"
+        class="xs:w-96 xs:h-96 object-cover xs:rounded-md xs:shadow-md"
+      />
+    </a>
     <div class="flex flex-col justify-between xs:w-full xs:mt-2">
       <p class="text-sm text-black opacity-60">
         <%=movieTitle%> (<%=(movieYear)%>)

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('./partials/head');%>
+  </head>
+  <body>
+    <div
+      class="flex w-full xs:flex-col xs:justify-center xs:items-center xs:mt-8"
+    >
+      <div class="flex xs:flex-col xs:max-w-sm">
+        <%- include('./partials/header.ejs');%>
+        <main>
+          <div class="flex flex-col xs:w-full xs:mt-10">
+            <video controls>
+              <source src="<%=`${metaResults[0].video['720p']}`%>" />
+            </video>
+            <div class="mt-4">
+              <p>Director: <%= metaResults[0].director %></p>
+              <p>Owen Wilson's character: <%= metaResults[0].character%></p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

@@ -33,4 +33,27 @@ router.get('/search/:page/movies', async (req, res) => {
   });
 });
 
+router.get('/movie/:title/:currentWow', async (req, res) => {
+  // const title = req.params.title
+  //   .replace(/-/g, ' ')
+  //   .split(' ')
+  //   .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+  //   .join(' ');
+  // console.log(req.params.title, title);
+  const title = req.params.title.replace(/-/g, ' ');
+  const currentWow = Number(req.params.currentWow);
+  const url = 'https://owen-wilson-wow-api.onrender.com/wows/ordered/0-90';
+  const results = await fetch(url);
+  const json = await results.json();
+  const metaResults = json.filter((item) => {
+    return (
+      item.movie.toLowerCase() === title &&
+      item.current_wow_in_movie === currentWow
+    );
+  });
+
+  // console.log(metaResults[0].video['720p']);
+  res.render('moviePage', { metaResults: metaResults });
+});
+
 module.exports = router;
