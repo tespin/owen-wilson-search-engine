@@ -16,9 +16,12 @@ The project uses Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api
 - feat: add to nav menu (about, installation)
 - feat: jest tests
 - feat: loading animation when fetching search results
+- feat: utils js to clean up route file
 - fix: margin on search meta
 - fix: autocomplete styles
 - fix: character limit instead of full line
 - fix: turn svgs into partials
 - fix: movie page styling
 - fix: add comments to code
+- fix: focus back to search bar after selecting autocomplete results
+- fix: add caching
