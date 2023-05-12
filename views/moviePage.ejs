@@ -7,16 +7,30 @@
     <div
       class="flex w-full xs:flex-col xs:justify-center xs:items-center xs:mt-8"
     >
-      <div class="flex xs:flex-col xs:max-w-sm">
+      <div class="flex xs:flex-col xs:max-w-sm xs:w-96">
         <%- include('./partials/header.ejs');%>
         <main>
           <div class="flex flex-col xs:w-full xs:mt-10">
-            <video controls>
-              <source src="<%=`${metaResults[0].video['720p']}`%>" />
-            </video>
-            <div class="mt-4">
-              <p>Director: <%= metaResults[0].director %></p>
-              <p>Owen Wilson's character: <%= metaResults[0].character%></p>
+            <p class="xs:text-4xl"><%= metadata.title%></p>
+            <div class="mt-4 xs:w-full">
+              <video class="xs:w-full" controls>
+                <source src="<%= metadata.src%>" />
+                />
+              </video>
+            </div>
+            <div class="mt-6">
+              <div class="mt-4">
+                <p class="text-sm text-black opacity-60">Release date</p>
+                <p><%= metadata.release %></p>
+              </div>
+              <div class="mt-4">
+                <p class="text-sm text-black opacity-60">Director</p>
+                <p><%= metadata.director %></p>
+              </div>
+              <div class="mt-4">
+                <p class="text-sm text-black opacity-60">Character</p>
+                <p><%= metadata.character%></p>
+              </div>
             </div>
           </div>
         </main>
