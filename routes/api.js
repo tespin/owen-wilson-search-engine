@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { convertDate } = require('./utils');
 
 router.get('/', async (req, res) => {
   const url = 'https://owen-wilson-wow-api.onrender.com/wows/random?results=5';
@@ -52,7 +53,15 @@ router.get('/movie/:title/:currentWow', async (req, res) => {
     );
   });
 
-  res.render('moviePage', { metaResults: metaResults });
+  const metadata = {
+    title: metaResults[0].movie,
+    release: convertDate(metaResults[0].release_date),
+    src: metaResults[0].video['720p'],
+    director: metaResults[0].director,
+    character: metaResults[0].character,
+  };
+
+  res.render('moviePage', { metadata: metadata });
 });
 
 module.exports = router;
