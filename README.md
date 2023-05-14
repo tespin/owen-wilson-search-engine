@@ -25,4 +25,3 @@ The project uses Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api
 - fix: add comments to code
 - fix: focus back to search bar after selecting autocomplete results
 - fix: add caching
-- fix: comma fix should follow dry principles
