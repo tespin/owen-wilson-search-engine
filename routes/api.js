@@ -35,9 +35,7 @@ router.get('/search/:page/movies', async (req, res) => {
 });
 
 router.get('/movie/:title/:currentWow', async (req, res) => {
-  console.log(req.params.title);
   const title = decodeURIComponent(req.params.title).toLowerCase();
-  console.log(title);
   const currentWow = Number(req.params.currentWow);
   const url = 'https://owen-wilson-wow-api.onrender.com/wows/ordered/0-90';
   const results = await fetch(url);
