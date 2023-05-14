@@ -35,23 +35,21 @@ router.get('/search/:page/movies', async (req, res) => {
 });
 
 router.get('/movie/:title/:currentWow', async (req, res) => {
-  let title = req.params.title.replace(/-/g, ' ');
-
-  if (title.startsWith('you')) {
-    let newTitle = title.slice(0, 3) + ',' + title.slice(3);
-    title = newTitle;
-  }
-
+  console.log(req.params.title);
+  const title = decodeURIComponent(req.params.title).toLowerCase();
+  console.log(title);
   const currentWow = Number(req.params.currentWow);
   const url = 'https://owen-wilson-wow-api.onrender.com/wows/ordered/0-90';
   const results = await fetch(url);
   const json = await results.json();
+  // console.log(title);
   const metaResults = json.filter((item) => {
     return (
       item.movie.toLowerCase() === title &&
       item.current_wow_in_movie === currentWow
     );
   });
+  // console.log(metaResults);
 
   const metadata = {
     title: metaResults[0].movie,

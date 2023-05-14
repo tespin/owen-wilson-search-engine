@@ -19,4 +19,17 @@ const convertDate = (date) => {
   return newDate;
 };
 
+// const formatTitle = (title) => {
+//   return req.params.title
+//     .replace(/-/g, ' ');
+//     .replace(/,/g, '');
+
+//   const newTitle = req.params.title.replace(/-/g, ' ');
+
+//   if (title.startsWith('you')) {
+//     let newTitle = title.slice(0, 3) + ',' + title.slice(3);
+//     title = newTitle;
+//   }
+// }
+
 module.exports = { convertDate };

@@ -3,7 +3,6 @@ const path = require('path');
 const app = express();
 const apiRouter = require('./routes/api');
 
-// app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
 
 const PORT = process.env.PORT || 3001;
@@ -14,7 +13,3 @@ app.listen(PORT, () => {
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.urlencoded({ extended: true }));
 app.use('/', apiRouter);
-
-// app.get('/', (req, res) => {
-//   res.render('index');
-// });
