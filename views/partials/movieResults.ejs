@@ -1,3 +1,4 @@
 <%for (let result of results){%> <%- include('./movieCard', { imgSrc:
-result.poster, fullLine: result.full_line, movieTitle: result.movie, movieYear:
-result.year, currentWow: result.current_wow_in_movie}) %> <%}%>
+result.poster, fullLine: result.full_line, movieTitle:
+encodeURIComponent(result.movie), movieYear: result.year, currentWow:
+result.current_wow_in_movie}) %> <%}%>
