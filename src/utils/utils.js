@@ -19,17 +19,18 @@ const convertDate = (date) => {
   return newDate;
 };
 
-// const formatTitle = (title) => {
-//   return req.params.title
-//     .replace(/-/g, ' ');
-//     .replace(/,/g, '');
+const getRandom = async () => {
+  const url = 'https://owen-wilson-wow-api.onrender.com/wows/random?results=5';
+  const results = await fetch(url);
+  const json = await results.json();
+  return json;
+};
 
-//   const newTitle = req.params.title.replace(/-/g, ' ');
+const getOrdered = async () => {
+  const url = 'https://owen-wilson-wow-api.onrender.com/wows/ordered/0-90';
+  const results = await fetch(url);
+  const json = await results.json();
+  return json;
+};
 
-//   if (title.startsWith('you')) {
-//     let newTitle = title.slice(0, 3) + ',' + title.slice(3);
-//     title = newTitle;
-//   }
-// }
-
-module.exports = { convertDate };
+module.exports = { convertDate, getRandom, getOrdered };

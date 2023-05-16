@@ -1,11 +1,9 @@
 const router = require('express').Router();
-const { convertDate } = require('../utils/utils');
+const { convertDate, getRandom, getOrdered } = require('../utils/utils');
 
 router.get('/', async (req, res) => {
-  const url = 'https://owen-wilson-wow-api.onrender.com/wows/random?results=5';
-  const results = await fetch(url);
-  const json = await results.json();
-  res.render('index', { title: '', randomResults: json });
+  const json = await getRandom();
+  res.render('index', { randomResults: json });
 });
 
 router.get('/search/:page/movies', async (req, res) => {
@@ -13,9 +11,7 @@ router.get('/search/:page/movies', async (req, res) => {
   let page = req.params.page || 1;
 
   const input = req.query.title;
-  const url = 'https://owen-wilson-wow-api.onrender.com/wows/ordered/0-90';
-  const results = await fetch(url);
-  const json = await results.json();
+  const json = await getOrdered();
   const updatedResults = json.filter((item) => {
     return item.movie.toLowerCase().startsWith(input.toLowerCase());
   });
@@ -37,17 +33,13 @@ router.get('/search/:page/movies', async (req, res) => {
 router.get('/movie/:title/:currentWow', async (req, res) => {
   const title = decodeURIComponent(req.params.title).toLowerCase();
   const currentWow = Number(req.params.currentWow);
-  const url = 'https://owen-wilson-wow-api.onrender.com/wows/ordered/0-90';
-  const results = await fetch(url);
-  const json = await results.json();
-  // console.log(title);
+  const json = await getOrdered();
   const metaResults = json.filter((item) => {
     return (
       item.movie.toLowerCase() === title &&
       item.current_wow_in_movie === currentWow
     );
   });
-  // console.log(metaResults);
 
   const metadata = {
     title: metaResults[0].movie,
