@@ -1,5 +1,6 @@
 const { convertDate } = require('../utils/utils');
 
+// retrieve a random set of 5 results from the api
 const getRandomWows = async () => {
   const url = 'https://owen-wilson-wow-api.onrender.com/wows/random?results=5';
   const results = await fetch(url);
@@ -7,8 +8,12 @@ const getRandomWows = async () => {
   return json;
 };
 
+// retrieve a paginated array of results
 const getPaginatedWows = async (params) => {
   const { input, numPerPage, page } = params;
+
+  // we request an ordered set of results from the api so that each page
+  // renders the same results, even when navigating between different pages
   const url = 'https://owen-wilson-wow-api.onrender.com/wows/ordered/0-90';
   const results = await fetch(url);
   const json = await results.json();
@@ -24,6 +29,7 @@ const getPaginatedWows = async (params) => {
   return { results: paginated, totalLength: filtered.length };
 };
 
+// retrieve a specific wow and return its metadata
 const getWowMetadata = async (params) => {
   const { title, wowIndex } = params;
   const url = 'https://owen-wilson-wow-api.onrender.com/wows/ordered/0-90';
