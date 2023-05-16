@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { convertDate } = require('./utils');
+const { convertDate } = require('../utils/utils');
 
 router.get('/', async (req, res) => {
   const url = 'https://owen-wilson-wow-api.onrender.com/wows/random?results=5';

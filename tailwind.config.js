@@ -7,7 +7,7 @@ module.exports = {
     '*.{html,js,ejs}',
     './public/**/*.{js,ejs}',
     './views/**/*.{js,ejs}',
-    './routes/*.{js,ejs}',
+    './src/*.{js,ejs}',
   ],
   theme: {
     screens: {
