@@ -1,7 +1,7 @@
 {
-  "name": "supplyframe-fs-intern-challenge",
+  "name": "Owen Wilson Search Engine",
   "version": "1.0.0",
-  "description": "Submission for Supplyframe Full Stack Intern Challenge",
+  "description": "Search engine for Owen Wilson uttering 'wow' in movies",
   "main": "index.js",
   "scripts": {
     "test": "jest",
