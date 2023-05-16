@@ -47,30 +47,6 @@ const getWowMetadata = async (params) => {
   return wowMetadata;
 };
 
-// router.get('/search/:page/movies', async (req, res) => {
-//   const numPerPage = 5;
-//   let page = req.params.page || 1;
-
-//   const input = req.query.title;
-//   const json = await getOrdered();
-//   const updatedResults = json.filter((item) => {
-//     return item.movie.toLowerCase().startsWith(input.toLowerCase());
-//   });
-
-//   const length = updatedResults.length;
-
-//   let start = numPerPage * page - numPerPage;
-//   let end = start + numPerPage;
-//   let paginatedResults = updatedResults.slice(start, end);
-
-//   res.render('search/movies', {
-//     results: paginatedResults,
-//     current: page,
-//     pages: Math.ceil(length / numPerPage),
-//     searchTerm: input,
-//   });
-// });
-
 module.exports = {
   getRandomWows,
   getPaginatedWows,
