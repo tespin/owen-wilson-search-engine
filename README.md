@@ -24,3 +24,5 @@ The project uses Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api
 - fix: movie page styling
 - fix: focus back to search bar after selecting autocomplete results
 - fix: add caching
+- fix: responsive search results page
+- fix: responsive movie page
