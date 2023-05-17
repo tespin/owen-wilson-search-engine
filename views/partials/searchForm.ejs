@@ -1,16 +1,18 @@
-<form
-  action="/search/1/movies"
-  class="relative"
-  autocomplete="off"
-  method="GET"
->
-  <input
-    type="text"
-    name="title"
-    placeholder="Search for a movie title"
-    class="search-input bg-white border-2 border-black py-2 px-4 xs:mt-8 rounded-lg xs:w-full"
-  />
-  <ul
-    class="autocomplete-results hidden bg-white border-2 xs:w-full z-10 xs:py-1"
-  ></ul>
-</form>
+<div class="">
+  <form
+    action="/search/1/movies"
+    class="relative flex justify-center"
+    autocomplete="off"
+    method="GET"
+  >
+    <input
+      type="text"
+      name="title"
+      placeholder="Search for a movie title"
+      class="search-input bg-white border-2 border-black py-2 px-4 xs:mt-8 rounded-lg xs:w-96 md:w-10/12 max-w-lg"
+    />
+    <ul
+      class="autocomplete-results hidden bg-white border-2 xs:w-full z-10 xs:py-1"
+    ></ul>
+  </form>
+</div>
