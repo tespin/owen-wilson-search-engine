@@ -1,17 +1,20 @@
-const api = require('../api/api');
+const Api = require('../api/api');
+const Wow = require('../api/Wow');
 
 const getRandomWows = async () => {
-  const randomWows = await api.getRandomWows();
+  const randomWows = await Api.getRandomWows();
   return randomWows;
 };
 
 const getPaginatedWows = async (params) => {
-  const paginatedWows = await api.getPaginatedWows(params);
+  const orderedWows = await Api.getOrderedWows();
+  const paginatedWows = Wow.getPaginatedWows(params, orderedWows);
   return paginatedWows;
 };
 
 const getWowMetadata = async (params) => {
-  const wowMetadata = await api.getWowMetadata(params);
+  const orderedWows = await Api.getOrderedWows();
+  const wowMetadata = Wow.getWowMetadata(params, orderedWows);
   return wowMetadata;
 };
 
