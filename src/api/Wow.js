@@ -1,4 +1,3 @@
-const { getOrderedWows } = require('./api');
 const { convertDate } = require('../utils/utils');
 
 // retrieve a paginated array of wows
@@ -25,6 +24,7 @@ const getWowMetadata = async (params, wows) => {
       item.current_wow_in_movie === wowIndex
     );
   })[0];
+
   const wowMetadata = {
     title: specificWow.movie,
     release: convertDate(specificWow.release_date),
