@@ -71,9 +71,12 @@ const showResults = () => {
 
   resultsContainer.innerHTML = results
     .map((result, index) => {
+      let first = index === 0 ? 'rounded-t-md' : '';
+      let last = index === results.length - 1 ? 'rounded-b-md' : '';
+
       return `
     <li
-      class='search-result hover:bg-gray-400 cursor-default'>
+      class='search-result py-1 px-2 hover:bg-gray-400 hover:text-white cursor-default ${first} ${last} '>
       ${result}
     </li>`;
     })
