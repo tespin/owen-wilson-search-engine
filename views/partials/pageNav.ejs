@@ -1,84 +1,86 @@
-<ul class="flex flex-row xs:w-full justify-between">
-  <% if (Number(current) === 1){ %>
-  <a class="px-4 py-2">
-    <svg
-      width="15"
-      height="15"
-      viewBox="0 0 15 15"
-      class="fill-black opacity-40"
-      xmlns="http://www.w3.org/2000/svg"
+<div class="flex justify-center">
+  <ul class="flex flex-row xs:w-4/12 justify-between items-center my-8">
+    <% if (Number(current) === 1){ %>
+    <a class="px-4 py-2">
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 15 15"
+        class="fill-black opacity-30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M8.84182 3.13514C9.04327 3.32401 9.05348 3.64042 8.86462 3.84188L5.43521 7.49991L8.86462 11.1579C9.05348 11.3594 9.04327 11.6758 8.84182 11.8647C8.64036 12.0535 8.32394 12.0433 8.13508 11.8419L4.38508 7.84188C4.20477 7.64955 4.20477 7.35027 4.38508 7.15794L8.13508 3.15794C8.32394 2.95648 8.64036 2.94628 8.84182 3.13514Z"
+        />
+      </svg>
+    </a>
+    <%} else {%>
+    <a class="px-4 py-2" href="<%=`/search/1/movies?title=${searchTerm}`%>">
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 15 15"
+        class="fill-black"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M8.84182 3.13514C9.04327 3.32401 9.05348 3.64042 8.86462 3.84188L5.43521 7.49991L8.86462 11.1579C9.05348 11.3594 9.04327 11.6758 8.84182 11.8647C8.64036 12.0535 8.32394 12.0433 8.13508 11.8419L4.38508 7.84188C4.20477 7.64955 4.20477 7.35027 4.38508 7.15794L8.13508 3.15794C8.32394 2.95648 8.64036 2.94628 8.84182 3.13514Z"
+        />
+      </svg>
+    </a>
+    <%}%> <% let i = (Number(current) > 5 ? Number(current) - 4 : 1) %> <% if (i
+    !== 1) { %>
+    <li class="disabled"><a>...</a></li>
+    <% } %> <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %> <% if
+    (i === Number(current)) { %>
+    <li class="active text-white bg-black px-4 py-2 rounded-md">
+      <a><%= i %></a>
+    </li>
+    <% } else { %>
+    <li class="px-3 py-1">
+      <a href="<%=`/search/${i}/movies?title=${searchTerm}`%>"><%= i %></a>
+    </li>
+    <% } %> <% if (i === Number(current) + 4 && i < pages) { %>
+    <li class="disabled"><a>...</a></li>
+    <% } %> <% } %> <% if (Number(current) === pages){ %>
+    <a class="px-4 py-2">
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 15 15"
+        class="fill-black opacity-30"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z"
+        />
+      </svg>
+    </a>
+    <%} else {%>
+    <a
+      class="px-4 py-2"
+      href="<%=`/search/${pages}/movies?title=${searchTerm}`%>"
     >
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M8.84182 3.13514C9.04327 3.32401 9.05348 3.64042 8.86462 3.84188L5.43521 7.49991L8.86462 11.1579C9.05348 11.3594 9.04327 11.6758 8.84182 11.8647C8.64036 12.0535 8.32394 12.0433 8.13508 11.8419L4.38508 7.84188C4.20477 7.64955 4.20477 7.35027 4.38508 7.15794L8.13508 3.15794C8.32394 2.95648 8.64036 2.94628 8.84182 3.13514Z"
-      />
-    </svg>
-  </a>
-  <%} else {%>
-  <a class="px-4 py-2" href="<%=`/search/1/movies?title=${searchTerm}`%>">
-    <svg
-      width="15"
-      height="15"
-      viewBox="0 0 15 15"
-      class="fill-black"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M8.84182 3.13514C9.04327 3.32401 9.05348 3.64042 8.86462 3.84188L5.43521 7.49991L8.86462 11.1579C9.05348 11.3594 9.04327 11.6758 8.84182 11.8647C8.64036 12.0535 8.32394 12.0433 8.13508 11.8419L4.38508 7.84188C4.20477 7.64955 4.20477 7.35027 4.38508 7.15794L8.13508 3.15794C8.32394 2.95648 8.64036 2.94628 8.84182 3.13514Z"
-      />
-    </svg>
-  </a>
-  <%}%> <% let i = (Number(current) > 5 ? Number(current) - 4 : 1) %> <% if (i
-  !== 1) { %>
-  <li class="disabled"><a>...</a></li>
-  <% } %> <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %> <% if (i
-  === Number(current)) { %>
-  <li class="active text-white bg-black px-4 py-2 rounded-md">
-    <a><%= i %></a>
-  </li>
-  <% } else { %>
-  <li class="px-3 py-1">
-    <a href="<%=`/search/${i}/movies?title=${searchTerm}`%>"><%= i %></a>
-  </li>
-  <% } %> <% if (i === Number(current) + 4 && i < pages) { %>
-  <li class="disabled"><a>...</a></li>
-  <% } %> <% } %> <% if (Number(current) === pages){ %>
-  <a class="px-4 py-2">
-    <svg
-      width="15"
-      height="15"
-      viewBox="0 0 15 15"
-      class="fill-black opacity-40"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z"
-      />
-    </svg>
-  </a>
-  <%} else {%>
-  <a
-    class="px-4 py-2"
-    href="<%=`/search/${pages}/movies?title=${searchTerm}`%>"
-  >
-    <svg
-      width="15"
-      height="15"
-      viewBox="0 0 15 15"
-      class="fill-black"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z"
-      />
-    </svg>
-  </a>
-  <%}%>
-</ul>
+      <svg
+        width="15"
+        height="15"
+        viewBox="0 0 15 15"
+        class="fill-black"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M6.1584 3.13508C6.35985 2.94621 6.67627 2.95642 6.86514 3.15788L10.6151 7.15788C10.7954 7.3502 10.7954 7.64949 10.6151 7.84182L6.86514 11.8418C6.67627 12.0433 6.35985 12.0535 6.1584 11.8646C5.95694 11.6757 5.94673 11.3593 6.1356 11.1579L9.565 7.49985L6.1356 3.84182C5.94673 3.64036 5.95694 3.32394 6.1584 3.13508Z"
+        />
+      </svg>
+    </a>
+    <%}%>
+  </ul>
+</div>
