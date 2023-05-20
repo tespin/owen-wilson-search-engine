@@ -1,8 +1,8 @@
 # Owen Wilson Wow Search Engine
 
-The Owen Wilson Wow Search Engine lets you search for every instance the word "Wow" is said by actor Owen Wilson.
+The Owen Wilson Wow Search Engine lets you search for every instance the word "Wow" is said by actor Owen Wilson. It pulls from Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api.onrender.com/).
 
-The project uses Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api.onrender.com/).
+The project was made with [Node.js](https://nodejs.org/en), [Express](https://expressjs.com/), [Jest](https://jestjs.io/) and [EJS](https://ejs.co/).
 
 ## To Do
 
@@ -10,19 +10,9 @@ The project uses Avi Mamenko's [Owen Wilson Wow API](https://owen-wilson-wow-api
 - docs: installation
 - docs: next steps (accessibility)
 - docs: next steps (allow search via other fields)
-- docs: next steps (intelligent cropping)
-- feat: hover style for search results
-- feat: desktop version
-- feat: add to nav menu (about, installation)
 - feat: loading animation when fetching search results
 - feat: utils js to clean up route
 - feat: refresh random wows
-- fix: margin on search meta
-- fix: autocomplete styles
 - fix: character limit instead of full line
-- fix: turn svgs into partials
-- fix: movie page styling
 - fix: focus back to search bar after selecting autocomplete results
 - fix: add caching
-- fix: responsive search results page
-- fix: responsive movie page

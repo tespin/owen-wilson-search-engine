@@ -7,9 +7,9 @@ const getPaginatedWows = async (params, wows) => {
     return item.movie.toLowerCase().startsWith(input.toLowerCase());
   });
 
+  // calculate the start and end of results to display on the current page
   let start = numPerPage * page - numPerPage;
   let end = start + numPerPage;
-
   const paginated = filtered.slice(start, end);
 
   return { results: paginated, totalLength: filtered.length };

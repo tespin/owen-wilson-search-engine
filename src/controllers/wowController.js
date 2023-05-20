@@ -18,7 +18,6 @@ const searchController = async (req, res) => {
     page,
   });
 
-  // calc the number of pages using Math.ceil
   res.render('search/movies', {
     results: results,
     current: page,

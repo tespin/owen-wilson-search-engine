@@ -1,17 +1,7 @@
-// let ejs = require('ejs');
-
 let suggestions = [];
 const searchInput = document.querySelector('.search-input');
 const resultsContainer = document.querySelector('.autocomplete-results');
 const searchResultsContainer = document.querySelector('.search-results');
-
-window.addEventListener('load', async () => {
-  const url = 'https://owen-wilson-wow-api.onrender.com/wows/movies';
-  const results = await fetch(url);
-  const json = await results.json();
-
-  suggestions = json;
-});
 
 document.body.addEventListener('click', (event) => {
   if (event.target === searchInput) return;
