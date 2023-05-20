@@ -8,7 +8,7 @@ const indexController = async (req, res) => {
 
 // render a search results page with the given numPerPage, current page number, and search input
 const searchController = async (req, res) => {
-  const numPerPage = 5;
+  const numPerPage = 4;
   const page = req.params.page || 1;
   const input = req.query.title;
 

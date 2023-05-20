@@ -31,6 +31,7 @@ const getWowMetadata = async (params, wows) => {
     src: specificWow.video['720p'],
     director: specificWow.director,
     character: specificWow.character,
+    full_line: specificWow.full_line,
   };
 
   return wowMetadata;
