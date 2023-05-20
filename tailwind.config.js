@@ -14,7 +14,15 @@ module.exports = {
       xs: '320px',
       ...defaultTheme.screens,
     },
-    extend: {},
+    extend: {
+      colors: {
+        base: {
+          light: '#ADF0E9',
+          DEFAULT: '#04eed7',
+          dark: '#246962',
+        },
+      },
+    },
   },
   plugins: [],
 };

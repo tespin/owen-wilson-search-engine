@@ -8,21 +8,23 @@
       class="flex xs:w-full xs:flex-col xs:justify-center xs:items-center xs:mt-8"
     >
       <div class="flex xs:flex-col max-w-4xl xs:w-96 sm:w-8/12">
-        <%- include('../partials/header.ejs');%>
+        <%- include('../partials/header')%>
         <main>
           <div class="flex flex-col xs:w-full xs:mt-6">
             <%- include('../partials/searchForm');%> <% if (typeof(searchTerm)
             !== 'undefined' && searchTerm.length > 0) { %>
-            <p class="mt-12"><%=`Search results for: "${searchTerm}"`%></p>
-            <%}%> <% if (typeof(results) !== 'undefined'){ %>
-            <div class="search-results grid grid-cols-12 sm:gap-x-4 xs:mt-4">
-              <%- include('../partials/movieResults', { results: results }) %>
+            <div class="my-10">
+              <p class=""><%=`Search results for: "${searchTerm}"`%></p>
+              <%}%> <% if (typeof(results) !== 'undefined'){ %>
+              <div class="search-results grid grid-cols-12 sm:gap-x-4 xs:mt-4">
+                <%- include('../partials/movieResults', { results: results }) %>
+              </div>
+              <%}%> <% if (pages > 0) { %> <%- include('../partials/pageNav', {
+              current: current, pages: pages})%> <%}%>
             </div>
-            <%}%>
           </div>
-          <% if (pages > 0) { %> <%- include('../partials/pageNav', { current:
-          current, pages: pages})%> <%}%>
         </main>
+        <%- include('../partials/footer')%>
       </div>
     </div>
   </body>

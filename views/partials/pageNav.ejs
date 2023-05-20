@@ -1,5 +1,5 @@
 <div class="flex justify-center">
-  <ul class="flex flex-row xs:w-4/12 justify-between items-center my-8">
+  <ul class="flex flex-row justify-between items-center mt-4">
     <% if (Number(current) === 1){ %>
     <a class="px-4 py-2">
       <svg
@@ -37,7 +37,7 @@
     <li class="disabled"><a>...</a></li>
     <% } %> <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %> <% if
     (i === Number(current)) { %>
-    <li class="active text-white bg-black px-4 py-2 rounded-md">
+    <li class="active text-white bg-base-dark px-4 py-2 rounded-md">
       <a><%= i %></a>
     </li>
     <% } else { %>
