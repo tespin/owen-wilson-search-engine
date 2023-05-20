@@ -10,7 +10,7 @@ describe('Get random wows', () => {
   it('should mock an API request for a list of random wows', async () => {
     const results = await getRandomWows();
     expect(mockedFetch).toHaveBeenCalledWith(
-      'https://owen-wilson-wow-api.onrender.com/wows/random?results=5'
+      'https://owen-wilson-wow-api.onrender.com/wows/random?results=4'
     );
     expect(Array.isArray(results)).toEqual(true);
     expect(results.length).toEqual(0);
