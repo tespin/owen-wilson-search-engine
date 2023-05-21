@@ -542,21 +542,6 @@ video {
   z-index: 10;
 }
 
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.my-12 {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .my-10 {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -566,8 +551,8 @@ video {
   margin-bottom: 1rem;
 }
 
-.mt-12 {
-  margin-top: 3rem;
+.mb-8 {
+  margin-bottom: 2rem;
 }
 
 .mt-4 {
@@ -578,16 +563,8 @@ video {
   margin-top: 1.5rem;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
 }
 
 .flex {
@@ -680,9 +657,9 @@ video {
   border-color: rgb(0 0 0 / 0.1);
 }
 
-.bg-black {
+.bg-base-dark {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  background-color: rgb(36 105 98 / var(--tw-bg-opacity));
 }
 
 .bg-white {
@@ -690,17 +667,8 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-base-dark {
-  --tw-bg-opacity: 1;
-  background-color: rgb(36 105 98 / var(--tw-bg-opacity));
-}
-
 .fill-black {
   fill: #000;
-}
-
-.fill-base-dark {
-  fill: #246962;
 }
 
 .object-cover {
@@ -767,11 +735,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-base-dark {
-  --tw-text-opacity: 1;
-  color: rgb(36 105 98 / var(--tw-text-opacity));
-}
-
 .underline {
   text-decoration-line: underline;
 }
@@ -782,11 +745,6 @@ video {
 
 .opacity-60 {
   opacity: 0.6;
-}
-
-.ring-base {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(4 238 215 / var(--tw-ring-opacity));
 }
 
 .drop-shadow-sm {
@@ -811,24 +769,14 @@ video {
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 
-.hover\:text-base:hover {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.hover\:text-white:hover {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
 .hover\:text-base-dark:hover {
   --tw-text-opacity: 1;
   color: rgb(36 105 98 / var(--tw-text-opacity));
 }
 
-.hover\:text-base:hover {
+.hover\:text-white:hover {
   --tw-text-opacity: 1;
-  color: rgb(4 238 215 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:brightness-75:hover {
@@ -860,11 +808,6 @@ video {
 @media (min-width: 320px) {
   .xs\:col-span-12 {
     grid-column: span 12 / span 12;
-  }
-
-  .xs\:my-6 {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
   }
 
   .xs\:mb-12 {

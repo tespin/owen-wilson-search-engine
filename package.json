@@ -4,6 +4,7 @@
   "description": "Search engine for Owen Wilson uttering 'wow' in movies",
   "main": "index.js",
   "scripts": {
+    "watch:css": "npx tailwindcss -i ./src/styles/input.css -o ./public/css/output.css --watch",
     "test": "jest",
     "start": "node server.js",
     "dev": "nodemon server.js",
