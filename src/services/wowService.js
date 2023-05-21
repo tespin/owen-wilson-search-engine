@@ -2,20 +2,32 @@ const Api = require('../api/api');
 const Wow = require('../api/Wow');
 
 const getRandomWows = async () => {
-  const randomWows = await Api.getRandomWows();
-  return randomWows;
+  try {
+    const randomWows = await Api.getRandomWows();
+    return randomWows;
+  } catch (error) {
+    throw error;
+  }
 };
 
 const getPaginatedWows = async (params) => {
-  const orderedWows = await Api.getOrderedWows();
-  const paginatedWows = Wow.getPaginatedWows(params, orderedWows);
-  return paginatedWows;
+  try {
+    const orderedWows = await Api.getOrderedWows();
+    const paginatedWows = Wow.getPaginatedWows(params, orderedWows);
+    return paginatedWows;
+  } catch (error) {
+    throw error;
+  }
 };
 
 const getWowMetadata = async (params) => {
-  const orderedWows = await Api.getOrderedWows();
-  const wowMetadata = Wow.getWowMetadata(params, orderedWows);
-  return wowMetadata;
+  try {
+    const orderedWows = await Api.getOrderedWows();
+    const wowMetadata = Wow.getWowMetadata(params, orderedWows);
+    return wowMetadata;
+  } catch (error) {
+    throw error;
+  }
 };
 
 module.exports = {
