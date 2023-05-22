@@ -1,10 +1,9 @@
 const { convertDate } = require('../utils/utils');
 
 // retrieve a random set of 4 results from the api
-const getRandomWows = async () => {
+const getRandomWows = async (params) => {
   try {
-    const url =
-      'https://owen-wilson-wow-api.onrender.com/wows/random?results=4';
+    const url = `https://owen-wilson-wow-api.onrender.com/wows/random?results=${params.numWows}`;
     const results = await fetch(url);
     const json = await results.json();
     return json;

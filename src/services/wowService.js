@@ -1,9 +1,9 @@
 const Api = require('../api/api');
 const Wow = require('../api/Wow');
 
-const getRandomWows = async () => {
+const getRandomWows = async (params) => {
   try {
-    const randomWows = await Api.getRandomWows();
+    const randomWows = await Api.getRandomWows(params);
     return randomWows;
   } catch (error) {
     throw error;

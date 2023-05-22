@@ -3,7 +3,8 @@ const wowService = require('../services/wowService');
 // render the index page with random wows
 const indexController = async (req, res) => {
   try {
-    const randomWows = await wowService.getRandomWows();
+    const numWows = 4;
+    const randomWows = await wowService.getRandomWows({ numWows: numWows });
     res.render('index', { randomResults: randomWows });
   } catch (error) {
     res.send({ error: error });
