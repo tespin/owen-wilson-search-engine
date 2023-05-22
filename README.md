@@ -6,6 +6,7 @@ The Owen Wilson Wow Search Engine lets you search for every instance the word "W
 - navigation through paginated results
 - random 'Wows' on the home page
 - testing on the API calls
+- responsive design across various window sizes
 
 The project was made with [Node.js](https://nodejs.org/en), [Express](https://expressjs.com/), [Jest](https://jestjs.io/) and [EJS](https://ejs.co/).
 

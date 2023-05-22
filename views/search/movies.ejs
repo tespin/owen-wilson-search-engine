@@ -16,7 +16,7 @@
             <div class="my-10">
               <p class=""><%=`Search results for: "${searchTerm}"`%></p>
               <%}%> <% if (typeof(results) !== 'undefined'){ %>
-              <div class="search-results grid grid-cols-12 sm:gap-x-4 xs:mt-4">
+              <div class="search-results grid grid-cols-12 sm:gap-x-4 xs:mt-12">
                 <%- include('../partials/movieResults', { results: results }) %>
               </div>
               <%}%> <% if (pages > 0) { %> <%- include('../partials/pageNav', {
