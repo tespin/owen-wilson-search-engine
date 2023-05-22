@@ -75,7 +75,7 @@ const showResults = () => {
 
       return `
     <li
-      class='search-result py-1 px-2 hover:bg-gray-400 hover:text-white cursor-default ${first} ${last} '>
+      class='search-result py-1 px-2 hover:bg-base-dark hover:text-white cursor-default ${first} ${last} '>
       ${result}
     </li>`;
     })
